@@ -12,7 +12,11 @@ const ProductView = ({
   sizes,
   colors,
   orderable,
-  buttonOnClick
+  buttonOnClick,
+  defaultColor,
+  defaultSize,
+  handleSizeSelectChange,
+  handleColorSelectChange,
 }) => (
   <div className="product">
     <div className="product-left-block">
@@ -27,21 +31,23 @@ const ProductView = ({
       <div className="product-select">
         <div>
           <Select
-            defaultOption="Size"
+            defaultOption={defaultSize}
             label="Size"
-            items={['red', 'yellow', 'black']}
+            items={sizes}
+            onChange={handleSizeSelectChange}
           />
         </div>
         <div>
           <Select
-            defaultOption="Size"
-            label="Size"
-            items={['red', 'yellow', 'black']}
+            defaultOption={defaultColor}
+            label="Color"
+            items={colors}
+            onChange={handleColorSelectChange}
           />
         </div>
       </div>
       <div className="product-button">
-        <Button text="Accept" onClick={buttonOnClick} />
+        <Button disabled={!orderable} text="Accept" onClick={buttonOnClick} />
       </div>
     </div>
   </div>

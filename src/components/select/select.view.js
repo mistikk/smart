@@ -25,7 +25,9 @@ class SelectView extends Component {
   };
 
   _handleOptionClick = (item) => {
+    const { onChange } = this.props;
     this.setState({ extended: false, title: item });
+    onChange(item);
   };
 
   render() {

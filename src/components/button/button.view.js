@@ -7,7 +7,7 @@ const ButtonView = ({ text, onClick, disabled }) => (
     onClick={() => !disabled && onClick()}
     className={`button ${disabled && 'passive'}`}
   >
-    {text}
+    {disabled ? 'Selection is not available' : text}
   </a>
 );
 
