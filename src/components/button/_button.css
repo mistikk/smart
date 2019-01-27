@@ -1,0 +1,14 @@
+.button {
+  padding: 15px;
+  cursor: pointer;
+  background: none;
+  box-shadow: none;
+  border: 1px solid;
+  width: 100%;
+}
+
+.passive {
+  cursor: not-allowed;
+  text-decoration: none;
+  color: black;
+}
