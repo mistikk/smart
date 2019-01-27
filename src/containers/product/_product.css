@@ -1,0 +1,9 @@
+.product {
+}
+
+.product-image {
+  height: 20vw;
+  width: 40vh;
+  border-style: solid;
+  border-width: 1px;
+}
