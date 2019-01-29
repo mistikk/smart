@@ -34,15 +34,14 @@ class ProductContainer extends Component {
   // Component Life Cycle Functions
   async componentDidMount() {
     const { match } = this.props;
-    const selectedProductId = match.params.id;
 
     await login({
       client_id: 'FQtKaLZrnF5RQeNtrtkqopQmqi2O5CmsM!DRSKIK3ZzvT1rBLr',
       secret: 'lLt5VBVb2EpdVXvAa6!XxVxL5AtXxQDCR!lvSHA7AonkFpP!!T',
     });
 
-    if (selectedProductId) {
-      getProductByCode(selectedProductId).then((result) => {
+    if (match.params.id) {
+      getProductByCode(match.params.id).then((result) => {
         this.setState({
           skus: result.skus,
           image: result.images[0].url,
@@ -97,7 +96,13 @@ class ProductContainer extends Component {
       image, description, sizes, colors, orderable, title, selectedColor, selectedSize, loading,
     } = this.state;
 
-    if (loading) return null;
+    if (loading) {
+      return (
+        <div className="product-error">
+          <p className="product-error-message">Please select product!</p>
+        </div>
+      );
+    }
     return (
       <ProductView
         image={image}

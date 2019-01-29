@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router, Route, Redirect, Switch,
+} from 'react-router-dom';
 
 import Header from './components/header/header.view';
 import Product from './containers/product';
@@ -12,10 +14,12 @@ class App extends Component {
       <Router>
         <div className="App">
           <Header />
-          <Route path="/:id" exact component={Product} />
+          <Switch>
+            <Route path="/:id" exact component={Product} />
+            <Redirect from="/" to="/error" />
+          </Switch>
         </div>
       </Router>
-
     );
   }
 }

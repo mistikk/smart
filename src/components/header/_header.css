@@ -1,6 +1,9 @@
 .header {
   display: flex;
   justify-content: center;
-  background-color: aqua;
-  min-height: 10vh;
+  min-height: 8vh;
+  border: 1px solid;
+}
+.logo {
+  max-height: 8vh;
 }

@@ -6,7 +6,7 @@ import './_header.css';
 
 const HeaderView = () => (
   <header className="header">
-    {/* <img className="logo" src={logo} alt="placeholder logo" /> */}
+    <img className="logo" src={logo} alt="placeholder logo" />
   </header>
 );
 
